@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
     });
 
      Gate::define('sci', function ($user) {
-        return $user->department?->name_department === 'الإدارة العلمية' || $user->department?->id_department === null;
+        return $user->department?->name_department === 'الإدارة العلمية' || $user->department?->id_department === null || $user->department?->name_department === 'التعليم عن بعد';
     });
     }
 

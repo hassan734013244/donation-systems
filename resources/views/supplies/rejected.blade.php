@@ -6,9 +6,9 @@
     <div class="py-12" dir="rtl">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                <table class="w-full text-right border-collapse">
+               <table class="w-full text-right border-collapse">
                     <thead>
-                        <tr class="bg-red-50 border-b">
+                         <tr class="bg-gray-100 border-b">
                             <th class="p-3 border text-gray-700">رقم السند</th>
                             <th class="p-3 border text-gray-700">المشروع</th>
                             <th class="p-3 border text-gray-700">المبلغ المرفوض</th>
@@ -58,7 +58,9 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="4" class="p-10 text-center text-gray-400">لا توجد سندات مرفوضة.</td>
+                           <td colspan="6" class="p-8 text-center text-gray-500 font-bold">
+                                    لا توجد طلبات سندات مرفوضة  حالياً.
+                                </td>
                         </tr>
                         @endforelse
                     </tbody>

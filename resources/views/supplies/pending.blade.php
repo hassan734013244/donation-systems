@@ -6,16 +6,15 @@
     <div class="py-12" dir="rtl">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6">
-                
-                <table class="w-full text-right border-collapse">
+               <table class="w-full text-right border-collapse">
                     <thead>
                         <tr class="bg-gray-100 border-b">
-                            <th class="p-3">رقم السند</th>
-                            <th class="p-3">التاريخ</th>
-                            <th class="p-3">المشروع / المتبرع</th>
-                            <th class="p-3">المبلغ (العملة)</th>
-                            <th class="p-3">الصافي (عملة الأساس)</th>
-                            <th class="p-3 text-center">الإجراء</th>
+                            <th class="p-3 border text-gray-700">رقم السند</th>
+                            <th class="p-3 border text-gray-700">التاريخ</th>
+                            <th class="p-3 border text-gray-700">المشروع / المتبرع</th>
+                            <th class="p-3 border text-gray-700">المبلغ (العملة)</th>
+                            <th class="p-3 border text-gray-700">الصافي (عملة الأساس)</th>
+                            <th class="p-3 border text-gray-700">الإجراء</th>
                         </tr>
                     </thead>
                     <tbody>

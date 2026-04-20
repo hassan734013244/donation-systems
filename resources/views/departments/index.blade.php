@@ -5,8 +5,12 @@
         {{ session('error') }}
     </div>
 @endif
-    <div class="py-12" dir="rtl">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">إدارة الأقسام / الإدارات</h2>
+    </x-slot>
+    
+    <div class="py-12 " dir="rtl">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-6 mb-6">
                 <h3 class="text-lg font-bold text-gray-800 mb-4">🏢 تسجيل إدارة جديدة</h3>
                 <form action="{{ route('departments.store') }}" method="POST" class="flex gap-4">
@@ -35,6 +39,9 @@
                                 <td class="px-6 py-4 font-medium text-gray-900">{{ $dept->name_department }}</td>
                                 <td class="px-6 py-4 text-gray-500 text-sm">{{ $dept->created_at->format('Y-m-d') }}</td>
                                 <td class="px-6 py-4 flex gap-2">
+                                    <a href="{{ route('departments.edit', $dept->id_department) }}" class="text-green-600 hover:text-red-900 font-bold">
+             ✏️ تعديل
+        </a>
     <form action="{{ route('departments.destroy', $dept->id_department) }}" method="POST" onsubmit="return confirm('هل أنت متأكد من حذف هذه الإدارة؟');">
         @csrf
         @method('DELETE')

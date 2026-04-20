@@ -37,6 +37,10 @@ Route::get('/', function () {
 // مسار عرض صفحة التعديل
 Route::get('/projects/{id}/edit', [ProjectController::class, 'edit'])->name('projects.edit');
 
+// مسار عرض صفحة التعديل للصفحة الإدارات
+Route::get('/departments/{id}/edit', [DepartmentController::class, 'edit'])->name('departments.edit');
+
+
 // مسار تنفيذ عملية التحديث في قاعدة البيانات
 Route::put('/projects/{id}', [ProjectController::class, 'update'])->name('projects.update');
 

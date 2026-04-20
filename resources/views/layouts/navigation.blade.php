@@ -11,7 +11,7 @@
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                        @canany(['admin','sci','access-media'])
+                      <!--  @canany(['admin','sci','access-media']) -->
 
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('لوحة التحكم') }}
@@ -57,7 +57,7 @@
                             </div>
                             @endcan
                             <div class="hidden sm:flex sm:items-center sm:ms-6">
-                                @canany(['admin','sci'])
+                                <!-- @canany(['admin','sci'])-->
 
                                 <x-dropdown align="right" width="48">
                                     <x-slot name="trigger">
@@ -93,7 +93,7 @@
                                         <x-dropdown-link :href="route('reports.index')" class="text-right">
                                             {{ __('📋 سجل التقارير') }}
                                         </x-dropdown-link>
-                                        @endcanany
+                                      <!--  @endcanany -->
 
 
                                         @can('admin')
@@ -105,7 +105,7 @@
 
                                     </x-slot>
                                 </x-dropdown>
-                                @endcanany
+                                <!-- @endcanany -->
                             </div>
 
 
@@ -282,7 +282,7 @@
     @endcan
 
     <!-- الرقابة والتقارير -->
-    @canany(['admin','sci'])
+   <!-- @canany(['admin','sci']) -->
     <div class="border-t my-2"></div>
 
     <div class="px-4 text-xs text-gray-400 font-bold">الرقابة والتقارير</div>
@@ -306,7 +306,7 @@
         📊 سجل المشاريع كاملة
     </x-responsive-nav-link>
     @endcan
-    @endcanany
+    <!-- @endcanany  ->
 
     <!-- السجل الإعلامي -->
     @can('access-media')
