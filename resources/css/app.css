@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* إجبار النظام على الاتجاه العربي */
+html {
+    direction: rtl;
+    text-align: right;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+}
