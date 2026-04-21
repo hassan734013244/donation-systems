@@ -76,6 +76,7 @@
                 تفاصيل المشروع
             </span>
         </th>
+        <th class="px-8 py-6 font-black text-sm uppercase tracking-wider text-center border-b border-slate-700"> المتبرع</th>
         <th class="px-8 py-6 font-black text-sm uppercase tracking-wider text-center border-b border-slate-700"> الإدارة</th>
         <th class="px-8 py-6 font-black text-sm uppercase tracking-wider text-center border-b border-slate-700">العدد</th>
         <th class="px-8 py-6 font-black text-sm uppercase tracking-wider text-center border-b border-slate-700">فترة التنفيذ</th>
@@ -86,8 +87,11 @@
                         @foreach($reports as $report)
                         <tr class="hover:bg-indigo-50/40 transition-all duration-300">
                             <td class="px-8 py-5">
-                                <div class="font-bold text-gray-900 text-lg">{{ $report->project_name }} / المتبرع ({{ $report->donor_name }})</div>
+                                <div class="font-bold text-gray-900 text-lg">{{ $report->project_name }}</div>
                                 <div class="text-xs text-gray-400 mt-1">تاريخ العملية: {{ $report->supply_date }}</div>
+                            </td>
+                            <td class="px-8 py-5">
+                            <div class="font-bold text-gray-900 text-lg"> {{ $report->donor_name }}</div>
                             </td>
                             <td class="px-8 py-5">
                             <div class="font-bold text-gray-900 text-lg"> {{ $report->name_department }}</div>

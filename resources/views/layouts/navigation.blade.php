@@ -50,6 +50,10 @@
                                         <x-dropdown-link :href="route('disbursements.create')"
                                             :active="request()->routeIs('disbursements.create')"> {{ __('سند الصرف') }}
                                         </x-dropdown-link>
+                                        
+                                        <x-dropdown-link :href="route('disbursements.index')"
+                                            :active="request()->routeIs('disbursements.index')"> {{ __('سجــل الصرف') }}
+                                        </x-dropdown-link>
                                         <x-dropdown-link href="{{ route('reports.supplyTable') }}">
                                             {{ __('كشف توريد التبرعات') }} </x-dropdown-link>
                                     </x-slot>

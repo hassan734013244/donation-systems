@@ -27,7 +27,7 @@
                     <tbody>
                         @foreach($disbursements as $disbursement)
                         <tr class="border-b hover:bg-slate-50 transition-colors">
-                            <td class="p-4">#{{ $disbursement->id_disbursement }}</td>
+                            <td class="p-4">#{{ $disbursement->id_disbursement }} </td>
                             <td class="p-4">{{ $disbursement->receipt_number }}</td>
                             <td class="p-4 font-bold text-rose-600">{{ number_format($disbursement->amount, 2) }} ريال</td>
                             <td class="p-4 text-slate-500">{{ $disbursement->disbursement_date }}</td>
