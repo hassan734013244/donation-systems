@@ -120,12 +120,13 @@
 
                             @endcan
 
-                            @can('access-media')
+                           
+                            @canany(['admin','access-media'])
                             <x-nav-link :href="route('media.index')" :active="request()->routeIs('media.index')">
                                 <span class="ml-2">📢</span>
                                 {{ __('السجل الإعلامي') }}
                             </x-nav-link>
-                            @endcan
+                            @endcanany
 
 
 

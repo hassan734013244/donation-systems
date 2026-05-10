@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
         return $user->department?->name_department === 'الإعلام' || $user->department?->id_department === null;
     });
     Gate::define('admin', function ($user) {
-        return $user->department?->id_department === null;
+        return $user->department?->id_department === null || $user->department?->name_department === 'ادارة المؤسسة';
     });
 
      Gate::define('sci', function ($user) {
