@@ -19,7 +19,7 @@
                     <thead>
                         <tr class="bg-slate-50 border-b">
                             <th class="p-4 text-slate-600 font-bold">رقم السند</th>
-                            <th class="p-4 text-slate-600 font-bold">رقم التوريد</th>
+                            <th class="p-4 text-slate-600 font-bold">اسم المشروع </th>
                             <th class="p-4 text-slate-600 font-bold">المبلغ المصروف</th>
                             <th class="p-4 text-slate-600 font-bold">تاريخ الصرف</th>
                         </tr>
@@ -28,7 +28,7 @@
                         @foreach($disbursements as $disbursement)
                         <tr class="border-b hover:bg-slate-50 transition-colors">
                             <td class="p-4">#{{ $disbursement->id_disbursement }} </td>
-                            <td class="p-4">{{ $disbursement->receipt_number }}</td>
+                            <td class="p-4">{{ $disbursement->project_name }} # {{ $disbursement->receipt_number }}</td>
                             <td class="p-4 font-bold text-rose-600">{{ number_format($disbursement->amount, 2) }} ريال</td>
                             <td class="p-4 text-slate-500">{{ $disbursement->disbursement_date }}</td>
                        

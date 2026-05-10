@@ -11,7 +11,9 @@ class DisbursementController extends Controller
     {
         $disbursements = DB::table('disbursements')
             ->join('supplies', 'disbursements.id_supply', '=', 'supplies.id_supply')
-            ->select('disbursements.*', 'supplies.receipt_number')
+            ->join('projects', 'supplies.id_project', '=', 'projects.id_project')
+            ->select('disbursements.*', 'supplies.receipt_number','projects.project_name')
+            
             ->latest()
             ->paginate(10);
 
