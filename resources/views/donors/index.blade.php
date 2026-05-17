@@ -1,4 +1,10 @@
 <x-app-layout>
+
+@if(session('error'))
+    <div class="bg-red-100 border-r-4 border-red-500 text-red-700 p-4 mb-4 rounded-xl font-bold" dir="rtl">
+        {{ session('error') }}
+    </div>
+@endif
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">إدارة المتبرعين</h2>
     </x-slot>
@@ -46,6 +52,7 @@
                             <th class="p-4 text-right">الاسم</th>
                             <th class="p-4 text-right">النوع</th>
                             <th class="p-4 text-right">تاريخ الإضافة</th>
+                            <th class="p-4 text-right">الإجراءات </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +65,15 @@
                             <td class="p-4 text-gray-500 text-sm">
                                 {{ $donor->created_at->format('Y-m-d') }}
                             </td>
+                             <td class="px-6 py-4 flex gap-2">
+                                <form action="{{ route('donors.destroy', $donor->id_donor) }}" method="POST" onsubmit="return confirm('هل أنت متأكد من حذف هذا المتبرع؟')">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="p-2 bg-rose-50 text-rose-600 rounded-none hover:bg-rose-100 transition shadow-sm" title="حذف">
+                    🗑️
+                </button>
+</form>
+                             </td>
                         </tr>
                         @endforeach
                     </tbody>

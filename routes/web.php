@@ -75,6 +75,7 @@ Route::get('/supply-statement', [SupplyController::class, 'supplyTable'])->name(
     Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
     Route::patch('/projects/{id}', [ProjectController::class, 'update_status'])->name('projects.update_status');
     Route::get('/donors', [DonorController::class, 'index'])->name('donors.index');
+    Route::delete('/donors/{id}', [DonorController::class, 'destroy'])->name('donors.destroy');
     Route::post('/donors', [DonorController::class, 'store'])->name('donors.store');
     Route::get('/currencies', [CurrencyController::class, 'index'])->name('currencies.index');
     Route::patch('/currencies/{id}', [CurrencyController::class, 'update'])->name('currencies.update');

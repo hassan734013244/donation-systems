@@ -31,4 +31,21 @@ public function store(Request $request)
 
     return redirect()->back()->with('success', 'تم إضافة المتبرع بنجاح');
 }
+
+public function destroy($id)
+{
+    // 1. جلب بيانات المتبرع أو إظهار 404 إذا لم يكن موجوداً
+    $donor = Donor::where('id_donor', $id)->firstOrFail();
+
+    // 2. التحقق مما إذا كان للمتبرع أي توريدات مرتبطة به
+    // نفترض أن اسم العلاقة في موديل Donor هو supplies
+    if ($donor->supplies()->exists()) {
+        return redirect()->back()->with('error', 'لا يمكن حذف هذا المتبرع لوجود توريدات مالية مرتبطة به في النظام.');
+    }
+
+    // 3. إذا لم توجد توريدات، يتم الحذف بأمان
+    $donor->delete();
+
+    return redirect()->back()->with('success', 'تم حذف المتبرع بنجاح.');
+}
 }

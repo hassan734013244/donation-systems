@@ -60,6 +60,9 @@ public function store(Request $request)
     {
         $project = Project::findOrFail($id);
         $project->update($request->only('status'));
+        $project->update($request->only('start_date'));
+        $project->update($request->only('end_date'));
+
 
         
 

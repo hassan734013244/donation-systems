@@ -13,6 +13,14 @@ protected $fillable = [
     'donor_type',
 ];
 
+
+public function supplies()
+{
+    // المتبرع الواحد لديه العديد من التوريدات
+    // الحقل الوسيط في جدول التوريدات هو id_donor
+    return $this->hasMany(Supply::class, 'id_donor', 'id_donor');
+}
+
 public function reports()
 {
     return $this->hasMany(DonorReport::class, 'id_donor'); // أو id_donor

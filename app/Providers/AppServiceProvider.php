@@ -42,12 +42,20 @@ class AppServiceProvider extends ServiceProvider
         return $user->department?->name_department === 'الإعلام' || $user->department?->id_department === null;
     });
     Gate::define('admin', function ($user) {
-        return $user->department?->id_department === null || $user->department?->name_department === 'ادارة المؤسسة';
+        return $user->department?->id_department === null || $user->department?->name_department === 'المالية';
     });
 
-     Gate::define('sci', function ($user) {
-        return $user->department?->name_department === 'الإدارة العلمية' || $user->department?->id_department === null || $user->department?->name_department === 'التعليم عن بعد';
-    });
+    Gate::define('sci', function ($user) {
+    return is_null($user->department?->id_department) ||
+        in_array($user->department?->name_department, [
+            'مدارس تعليم القرآن',
+            'الإدارة الإجتماعية',
+            'التمكين الأسري',
+            'التوعية والتعليم',
+            'التعليم عن بعد',
+            'التدريب',
+        ]);
+});
     }
 
    
